@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+option go_package = "github.com/xy08020303/calculator-app/backend/gen/go/calculator/v1;calculatorv1";
+
+service CalculatorService {
+  rpc Add (BinaryOpRequest) returns (BinaryOpResponse) {}
+  rpc Sub (BinaryOpRequest) returns (BinaryOpResponse) {}
+  rpc Mul (BinaryOpRequest) returns (BinaryOpResponse) {}
+  rpc Div (BinaryOpRequest) returns (BinaryOpResponse) {}
+}
+
+message BinaryOpRequest {
+  double a = 1;
+  double b = 2;
+}
+
+message BinaryOpResponse {
+  double result = 1;
+}
