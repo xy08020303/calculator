@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator.v1;
+
+option go_package = "github.com/xy08020303/calculator/backend/gen/go/calculator/v1;calculatorv1";
+
+message CalculationRequest {
+  double num1 = 1;
+  double num2 = 2;
+  string operation = 3; // "+", "-", "*", "/"
+}
+
+message CalculationResponse {
+  double result = 1;
+}
+
+service CalculatorService {
+  rpc Calculate(CalculationRequest) returns (CalculationResponse) {}
+}
