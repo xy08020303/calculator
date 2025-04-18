@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculator.v1;
+option go_package = "calculator/gen;calculator";
+
+service CalculatorService {
+  rpc Calculate (CalculationRequest) returns (CalculationResponse) {}
+}
+
+message CalculationRequest {
+  double a = 1;
+  double b = 2;
+  string op = 3; // "+", "-", "*", "/"
+}
+
+message CalculationResponse {
+  double result = 1;
+}
